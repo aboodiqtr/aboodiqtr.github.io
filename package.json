@@ -1,0 +1,21 @@
+{
+  "name": "dev-site-business-layer",
+  "version": "1.0.0",
+  "description": "Business layer for a personal developer website (profile, skills, projects, experience, contact).",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "start": "tsc && node dist/web/server.js",
+    "export": "tsc && node dist/web/export.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1"
+  }
+}

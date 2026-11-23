@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abdulrahman Yahya · Full-Stack &amp; Mobile Developer</title>
+<meta name="description" content="Software Development student at Istanbul Aydın University (3rd year, GPA 3.31) who ships real products: a double-entry accounting &amp; POS system, a cross-platform budget app, an AI assistant and a habit-to-savings tracker. I care about clean architecture, user-centered interfaces and solving real problems. Fluent in Arabic and English." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#fff;--surface:#f6f6f6;--elev:#ececec;--border:#e3e3e3;--text:#0a0a0a;--text2:#454545;--muted:#8c8c8c;--r-md:14px;--r-lg:24px;
+--sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1440px;margin:0 auto;padding-left:120px;padding-right:120px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg)}
+.eyebrow{font:500 13px/1.4 var(--mono);letter-spacing:.08em;color:var(--text);margin-bottom:16px}
+.mono{font:400 12px/1.4 var(--mono)}.muted{color:var(--muted)}.sub{color:var(--text2)}
+h1{font-size:84px;line-height:1;letter-spacing:-.04em;font-weight:700}
+h1 u{text-decoration-thickness:6px;text-underline-offset:10px}
+h2{font-size:48px;line-height:1.1;letter-spacing:-.03em;font-weight:600}
+h3{font-size:24px;line-height:1.25;letter-spacing:-.01em;font-weight:600}
+.lead{font-size:20px;line-height:1.55;color:var(--text2)}.narrow{max-width:720px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font:500 15px/1.4 var(--sans);border:1px solid transparent;cursor:pointer;transition:transform .15s,opacity .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}.btn:disabled{opacity:.6;cursor:wait}
+.btn.primary{background:var(--text);color:#fff}.btn.secondary{background:var(--surface);border-color:var(--border);color:var(--text)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding-top:28px;padding-bottom:28px;position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);z-index:10}
+.logo{display:flex;align-items:center;gap:10px;font-weight:500;font-size:15px}
+.mark{width:36px;height:36px;border-radius:var(--r-md);background:var(--text);color:#fff;display:grid;place-items:center;font:500 15px var(--mono)}
+.nav nav{display:flex;gap:36px;font-weight:500;font-size:15px;color:var(--text2)}
+.hero{display:grid;grid-template-columns:660px 1fr;gap:64px;align-items:center;padding-top:96px;padding-bottom:96px}
+.intro{display:flex;flex-direction:column;gap:28px}
+.badge{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--border);background:var(--surface);border-radius:999px;font:400 12px var(--mono);color:var(--text2)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--text);box-shadow:0 0 0 4px rgba(0,0,0,.08)}
+.hello{font-size:24px;font-weight:600;color:var(--text2)}.ctas{display:flex;gap:12px}
+.socials{display:flex;gap:24px;font:400 12px var(--mono);color:var(--muted);padding-top:8px}
+.code{background:#0a0a0a;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 40px 80px -20px rgba(0,0,0,.25)}
+.code .bar{display:flex;align-items:center;gap:8px;padding:16px 20px;background:#1a1a1a;font:400 12px var(--mono);color:#6b6b6b}
+.code .bar i{width:11px;height:11px;border-radius:50%;background:#5a5a5a}.code .bar i:nth-child(2){background:#7a7a7a}.code .bar i:nth-child(3){background:#9a9a9a}
+.code pre{padding:24px 28px 28px;font:400 15px/1.9 var(--mono);color:#6b6b6b;white-space:pre-wrap}
+.code .k{color:#bdbdbd}.code .w{color:#fff}.code .g{color:#9a9a9a}.code .n{color:#bdbdbd}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{padding:24px 28px;display:flex;flex-direction:column;gap:6px;border-radius:var(--r-md)}.stat strong{font-size:48px;font-weight:600;letter-spacing:-.03em;line-height:1.1}.stat span{color:var(--muted)}
+.section{padding-top:120px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px}.about>div:last-child{display:flex;flex-direction:column;gap:20px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{padding:5px 10px;border-radius:999px;background:var(--elev);border:1px solid var(--border);font:400 12px var(--mono);color:var(--text2)}
+.pills .tag{padding:8px 14px;background:var(--surface)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.project{overflow:hidden;box-shadow:0 24px 48px -12px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s}
+.project:hover{transform:translateY(-4px);box-shadow:0 32px 60px -16px rgba(0,0,0,.14)}
+.cover{height:220px;position:relative;background:linear-gradient(150deg,rgba(0,0,0,.10),rgba(0,0,0,0)) ,#f2f2f2}
+.cover .idx{position:absolute;left:32px;top:28px;font:500 13px var(--mono);letter-spacing:.08em;color:var(--muted)}
+.cover .cover-title{position:absolute;left:32px;bottom:22px;font-size:40px;font-weight:600;letter-spacing:-.02em}
+.project .body{padding:28px 32px 32px;display:flex;flex-direction:column;gap:14px}.project .body .eyebrow{margin:0}
+.links{display:flex;gap:20px;padding-top:6px;font-weight:500;font-size:15px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.skill-group{padding:24px;display:flex;flex-direction:column;gap:16px}.sg-head{display:flex;align-items:center;gap:10px;font-size:15px}
+.icon{width:36px;height:36px;border-radius:var(--r-md);background:var(--elev);display:grid;place-items:center;font:400 12px var(--mono)}
+.strengths{margin-top:16px;padding:28px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px 20px;color:var(--text2)}
+.strengths i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--text);margin-right:8px;vertical-align:middle}
+.edu{display:grid;grid-template-columns:1fr 440px;gap:16px;margin-top:48px;align-items:start}
+.timeline{padding:32px;display:flex;flex-direction:column;gap:28px}.entry{display:flex;gap:20px}.entry>div{display:flex;flex-direction:column;gap:6px}
+.marker{flex:none;width:12px;height:12px;border-radius:50%;background:var(--muted);margin-top:6px}.marker.on{background:var(--text)}
+.langs{padding:32px;display:flex;flex-direction:column;gap:22px}.lang{display:flex;flex-direction:column;gap:10px}.lang>div:first-child{display:flex;justify-content:space-between;font-size:15px}
+.track{height:6px;border-radius:3px;background:var(--elev)}.track b{display:block;height:100%;border-radius:3px;background:var(--text)}
+.contact{padding:64px;display:grid;grid-template-columns:1fr 460px;gap:64px;align-items:center}
+.pitch{display:flex;flex-direction:column;gap:20px}.pitch .eyebrow{margin:0}
+dl{display:grid;grid-template-columns:80px 1fr;gap:12px 16px;padding-top:8px}dt{font:400 12px var(--mono);color:var(--muted);align-self:center}dd{font-weight:500;font-size:15px}
+.form{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:14px}
+.form label{display:flex;flex-direction:column;gap:8px;font:400 12px var(--mono);color:var(--muted)}
+.form input,.form textarea{font:16px var(--sans);color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:13px 14px;resize:vertical;outline:none}
+.form input:focus,.form textarea:focus{border-color:var(--text)}
+.form .btn{justify-content:center}.hp{position:absolute;left:-9999px}
+.status{font-size:14px;min-height:20px;color:var(--text2)}.status.ok{color:#0a0a0a;font-weight:500}.status.err{color:#b00020}
+.footer{display:flex;justify-content:space-between;padding-top:32px;padding-bottom:40px;margin-top:120px;border-top:1px solid var(--border);font:400 12px var(--mono);color:var(--muted)}
+.footer span:last-child{display:flex;gap:24px;color:var(--text2)}
+@media (max-width:1100px){.wrap{padding-left:32px;padding-right:32px}.hero,.about,.edu,.contact{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.nav nav{display:none}h1{font-size:60px}}
+@media (max-width:700px){.hero>*,.about>*,.edu>*,.contact>*{min-width:0}.ctas{flex-wrap:wrap}.code pre{overflow-x:auto;white-space:pre}.nav .btn{padding:10px 14px}dl{grid-template-columns:70px 1fr}dd{overflow-wrap:anywhere}.footer span:last-child{flex-wrap:wrap}.wrap{padding-left:20px;padding-right:20px}.grid2,.grid4,.stats{grid-template-columns:1fr}h1{font-size:44px}h2{font-size:34px}.hero{padding-top:48px}.contact{padding:28px}.footer{flex-direction:column;gap:16px}.code pre{font-size:13px}}
+</style>
+</head>
+<body>
+<header class="nav wrap">
+  <a class="logo" href="#top"><span class="mark">AY</span>abdulrahman.dev</a>
+  <nav><a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+  <a class="btn secondary" href="#contact">Let's talk <span>→</span></a>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <div class="intro">
+    <span class="badge"><i></i>Open to internships &amp; freelance · Istanbul, Turkey / Doha, Qatar</span>
+    <p class="hello">Hi, I'm Abdulrahman Yahya 👋</p>
+    <h1>I build web &amp; mobile products that people <u>actually use.</u></h1>
+    <p class="lead">Software Development student at Istanbul Aydın University (3rd year, GPA 3.31) who ships real products: a double-entry accounting &amp; POS system, a cross-platform budget app, an AI assistant and a habit-to-savings tracker. I care about clean architecture, user-centered interfaces and solving real problems. Fluent in Arabic and English.</p>
+    <div class="ctas"><a class="btn primary" href="#work">See my work <span>→</span></a><a class="btn secondary" href="#contact">Get in touch <span>→</span></a></div>
+    <div class="socials"><a href="https://github.com/aboodiqtr" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/abdulrahman-yahya-mohammed-s" target="_blank" rel="noopener">LinkedIn ↗</a><a href="mailto:abdulrahman.sharafaddin1@gmail.com">Email ↗</a></div>
+  </div>
+  <div class="code">
+    <div class="bar"><i></i><i></i><i></i><span>about-me.ts</span></div>
+<pre><span class="k">const</span> <span class="w">abdulrahman</span> = {
+  <span class="g">role:</span> <span class="w">"Full-Stack &amp; Mobile Developer"</span>,
+  <span class="g">based:</span> <span class="w">"Istanbul, Turkey / Doha, Qatar"</span>,
+  <span class="g">studying:</span> <span class="w">"BSc Software Dev @ IAU"</span>,
+  <span class="g">stack:</span> <span class="w">["Node", "Flutter", "React"]</span>,
+  <span class="g">shipped:</span> <span class="n">4</span>,
+  <span class="g">languages:</span> <span class="w">["Arabic", "English", "Turkish"]</span>,
+  <span class="g">openToWork:</span> <span class="n">true</span>,
+};</pre>
+  </div>
+</section>
+
+<section class="stats wrap">
+  <div class="card stat"><strong>4</strong><span>Products shipped end-to-end</span></div><div class="card stat"><strong>3.31</strong><span>University GPA · IAU</span></div><div class="card stat"><strong>97.81%</strong><span>High school grade · Distinction</span></div><div class="card stat"><strong>3</strong><span>Languages · AR, EN, TR</span></div>
+</section>
+
+<section id="about" class="wrap section about">
+  <div><p class="eyebrow">01 — ABOUT</p><h2>Turning real problems into clean, working software.</h2></div>
+  <div>
+    <p class="lead">I'm a third-year Software Development student at Istanbul Aydın University and a hands-on builder. I like owning a product from the database to the last pixel: designing the data model, writing the business logic, and shipping an interface people enjoy using.</p>
+    <p class="lead">I work across web, mobile and desktop, and I'm comfortable in multicultural teams, working fluently in Arabic and English.</p>
+    <div class="tags pills"><span class="tag">Clean architecture</span><span class="tag">Double-entry accounting</span><span class="tag">Real-time apps</span><span class="tag">Bilingual RTL / LTR UIs</span><span class="tag">Figma → code</span></div>
+  </div>
+</section>
+
+<section id="work" class="wrap section">
+  <p class="eyebrow">02 — SELECTED WORK</p>
+  <h2>Things I've designed, built and shipped.</h2>
+  <p class="lead narrow">4 products across web, mobile and AI, each built end to end: data model, business logic, API and interface.</p>
+  <div class="grid2"><article class="card project">
+    <div class="cover"><span class="idx">01</span><span class="cover-title">COSMALINE</span></div>
+    <div class="body">
+      <p class="eyebrow">WEB · BUSINESS · FINTECH</p>
+      <h3>COSMALINE — Accounting, Inventory &amp; POS</h3>
+      <p class="sub">Full-stack POS and accounting system for a cosmetics business. A double-entry engine auto-posts every sale and expense into the ledger, trial balance, income statement and balance sheet. Barcode scanning, stock alerts, payment gateways, roles, Arabic/English.</p>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span><span class="tag">Docker</span></div>
+      <div class="links"><a href="#contact">Ask me about it →</a><span class="muted">Private repo</span></div>
+    </div>
+  </article><article class="card project">
+    <div class="cover"><span class="idx">02</span><span class="cover-title">Mizaniyati</span></div>
+    <div class="body">
+      <p class="eyebrow">MOBILE · FINTECH</p>
+      <h3>Mizaniyati — Budget &amp; Expense Tracker</h3>
+      <p class="sub">Cross-platform budget app (Android, iOS, Web) for income, expenses, savings goals and subscriptions. Imports bank statements and bank SMS with automatic categorization. Real-time Firebase sync, multi-currency, bilingual, designed in Figma.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firestore</span><span class="tag">Figma</span></div>
+      <div class="links"><a href="#contact">Ask me about it →</a><span class="muted">Private repo</span></div>
+    </div>
+  </article><article class="card project">
+    <div class="cover"><span class="idx">03</span><span class="cover-title">Islamic AI Assistant</span></div>
+    <div class="body">
+      <p class="eyebrow">AI · WEB</p>
+      <h3>Islamic AI Assistant</h3>
+      <p class="sub">AI-powered platform that answers Islamic jurisprudence questions by retrieving from trusted fatwa sources (IslamWeb, Sheikh Ibn Baz). Avatar-based chat UI, Google / Apple / email sign-in, and a clear disclaimer to verify the source.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">HTML/CSS</span><span class="tag">Render</span></div>
+      <div class="links"><a href="https://islamic-ai-assistant-2.onrender.com/" target="_blank" rel="noopener">Live demo ↗</a><span class="muted">Private repo</span></div>
+    </div>
+  </article><article class="card project">
+    <div class="cover"><span class="idx">04</span><span class="cover-title">iTrack</span></div>
+    <div class="body">
+      <p class="eyebrow">MOBILE · FINTECH · REAL-TIME</p>
+      <h3>iTrack — Habit &amp; Savings Tracker</h3>
+      <p class="sub">Turns self-discipline into savings: every successful habit adds a monetary reward to a growing balance. Streaks, a financial feedback loop and community accountability with real-time chat.</p>
+      <div class="tags"><span class="tag">React Native</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Socket.IO</span><span class="tag">MySQL</span></div>
+      <div class="links"><a href="#contact">Ask me about it →</a><a class="muted" href="https://github.com/aboodiqtr/Smart-Habit-Tracker-Discipline-System" target="_blank" rel="noopener">Source ↗</a></div>
+    </div>
+  </article></div>
+</section>
+
+<section id="skills" class="wrap section">
+  <p class="eyebrow">03 — SKILLS &amp; TOOLS</p>
+  <h2>My toolbox.</h2>
+  <p class="lead narrow">Strong foundations in OOP, database design and problem solving, applied with a modern, practical stack.</p>
+  <div class="grid4"><div class="card skill-group">
+    <div class="sg-head"><span class="icon">{ }</span><strong>Languages</strong></div>
+    <div class="tags"><span class="tag" title="advanced">Dart</span><span class="tag" title="advanced">JavaScript</span><span class="tag" title="intermediate">C</span><span class="tag" title="intermediate">C#</span><span class="tag" title="intermediate">Java</span><span class="tag" title="intermediate">Python</span></div>
+  </div><div class="card skill-group">
+    <div class="sg-head"><span class="icon">◧</span><strong>Frontend &amp; Mobile</strong></div>
+    <div class="tags"><span class="tag" title="advanced">Flutter</span><span class="tag" title="advanced">React</span><span class="tag" title="advanced">Tailwind / Bootstrap</span><span class="tag" title="intermediate">Angular</span><span class="tag" title="intermediate">Next.js</span><span class="tag" title="intermediate">React Native (Expo)</span></div>
+  </div><div class="card skill-group">
+    <div class="sg-head"><span class="icon">⛁</span><strong>Backend &amp; Data</strong></div>
+    <div class="tags"><span class="tag" title="advanced">MySQL</span><span class="tag" title="advanced">Node.js / Express</span><span class="tag" title="advanced">PostgreSQL / Supabase</span><span class="tag" title="intermediate">.NET</span><span class="tag" title="intermediate">FastAPI / Flask</span><span class="tag" title="intermediate">Firebase</span><span class="tag" title="intermediate">Socket.IO</span></div>
+  </div><div class="card skill-group">
+    <div class="sg-head"><span class="icon">⚙</span><strong>Cloud &amp; Tools</strong></div>
+    <div class="tags"><span class="tag" title="advanced">Git &amp; GitHub</span><span class="tag" title="intermediate">Docker</span><span class="tag" title="intermediate">Figma</span><span class="tag" title="intermediate">Jira</span><span class="tag" title="intermediate">Render / Cloudflare</span><span class="tag" title="intermediate">Sentry</span><span class="tag" title="beginner">AWS / Azure / GCP</span></div>
+  </div></div>
+  <div class="card strengths"><span class="mono muted">Core strengths</span><span><i></i>Full-stack web apps</span><span><i></i>Cross-platform mobile</span><span><i></i>OOP &amp; clean design</span><span><i></i>Database design</span><span><i></i>Problem solving</span><span><i></i>UI / UX awareness</span></div>
+</section>
+
+<section id="education" class="wrap section">
+  <p class="eyebrow">04 — EDUCATION &amp; LANGUAGES</p>
+  <h2>Always learning.</h2>
+  <div class="edu">
+    <div class="card timeline"><div class="entry"><span class="marker on"></span><div>
+    <p class="mono">2023 — Present</p><h3>Istanbul Aydın University</h3>
+    <p class="sub">BSc Software Development</p><p class="muted">Currently in 3rd year. Cumulative GPA 3.31 / 4.00. · Istanbul, Turkey / Doha, Qatar</p>
+  </div></div><div class="entry"><span class="marker"></span><div>
+    <p class="mono">Until 2023</p><h3>Government Schools of Qatar</h3>
+    <p class="sub">Primary, Preparatory &amp; Secondary Education</p><p class="muted">Final grade 97.81% (Distinction). · Qatar</p>
+  </div></div></div>
+    <div class="card langs"><h3>Languages</h3><div class="lang"><div><strong>Arabic</strong><span class="mono muted">Native</span></div><div class="track"><b style="width:100%"></b></div></div><div class="lang"><div><strong>English</strong><span class="mono muted">Professional</span></div><div class="track"><b style="width:80%"></b></div></div><div class="lang"><div><strong>Turkish</strong><span class="mono muted">A1 · Certified</span></div><div class="track"><b style="width:20%"></b></div></div></div>
+  </div>
+</section>
+
+<section id="contact" class="wrap section">
+  <div class="card contact">
+    <div class="pitch">
+      <p class="eyebrow">05 — CONTACT</p>
+      <h2>Have a project or a role in mind? Let's talk.</h2>
+      <p class="lead">I'm open to internships, freelance projects and junior roles. I usually reply within a day.</p>
+      <dl>
+        <dt>EMAIL</dt><dd><a href="mailto:abdulrahman.sharafaddin1@gmail.com">abdulrahman.sharafaddin1@gmail.com</a></dd>
+        <dt>GITHUB</dt><dd><a href="https://github.com/aboodiqtr" target="_blank" rel="noopener">github.com/aboodiqtr</a></dd>
+        <dt>LINKEDIN</dt><dd><a href="https://www.linkedin.com/in/abdulrahman-yahya-mohammed-s" target="_blank" rel="noopener">in/abdulrahman-yahya-mohammed-s</a></dd>
+        <dt>BASED IN</dt><dd>Istanbul, Turkey / Doha, Qatar</dd>
+      </dl>
+    </div>
+    <form id="contact-form" class="form" novalidate>
+      <label>Name<input name="name" placeholder="Your name" required maxlength="100" /></label>
+      <label>Email<input name="email" type="email" placeholder="you@company.com" required /></label>
+      <label>Message<textarea name="message" rows="5" placeholder="Tell me about your project…" required></textarea></label>
+      <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button class="btn primary" type="submit">Send message <span>→</span></button>
+      <p id="form-status" class="status" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="wrap footer">
+  <span>© 2026 Abdulrahman Yahya · Designed in Figma, built with care.</span>
+  <span><a href="https://github.com/aboodiqtr">GitHub</a><a href="https://www.linkedin.com/in/abdulrahman-yahya-mohammed-s">LinkedIn</a><a href="mailto:abdulrahman.sharafaddin1@gmail.com">Email</a><a href="#top">Back to top ↑</a></span>
+</footer>
+<script>
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form));
+  const btn = form.querySelector("button");
+  btn.disabled = true; status.className = "status"; status.textContent = "Sending…";
+  try {
+    const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+    const body = await res.json().catch(() => ({}));
+    if (res.ok) { form.reset(); status.className = "status ok"; status.textContent = "Thanks! Your message was sent. I'll get back to you soon."; }
+    else { status.className = "status err"; status.textContent = (body.issues || [body.error || "Something went wrong"]).join(" · "); }
+  } catch {
+    status.className = "status err";
+    status.innerHTML = 'The server is not reachable. Email me directly at <a href="mailto:abdulrahman.sharafaddin1@gmail.com">__EMAIL__</a>.';
+  } finally { btn.disabled = false; }
+});</script>
+</body>
+</html>
