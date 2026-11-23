@@ -172,12 +172,13 @@ form.addEventListener("submit", async (e) => {
   btn.disabled = true; status.className = "status"; status.textContent = "Sending…";
   try {
     const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
-    const body = await res.json().catch(() => ({}));
+    const body = await res.json().catch(() => null);
+    if (!body) throw new Error("no backend");
     if (res.ok) { form.reset(); status.className = "status ok"; status.textContent = "Thanks! Your message was sent. I'll get back to you soon."; }
     else { status.className = "status err"; status.textContent = (body.issues || [body.error || "Something went wrong"]).join(" · "); }
   } catch {
     status.className = "status err";
-    status.innerHTML = 'The server is not reachable. Email me directly at <a href="mailto:__EMAIL__">__EMAIL__</a>.';
+    status.innerHTML = 'The contact form is offline right now. Please email me at <a href="mailto:__EMAIL__">__EMAIL__</a>.';
   } finally { btn.disabled = false; }
 });`;
 
