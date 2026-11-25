@@ -3,7 +3,7 @@ import { createServer, type IncomingMessage, type ServerResponse } from "node:ht
 import { createBusinessLayer } from "../container.js";
 import { DomainError, NotFoundError, RateLimitError, ValidationError } from "../errors/index.js";
 import { seedExample } from "../seed.js";
-import { renderPage } from "./render.js";
+import { renderNotFound, renderPage } from "./render.js";
 
 const PORT = Number(process.env.PORT ?? 3000);
 
@@ -57,6 +57,8 @@ const server = createServer(async (req, res) => {
       return json(res, 201, { ok: true, ...result });
     }
     if (req.method === "GET" && url.pathname === "/health") return json(res, 200, { ok: true });
+    if (req.method === "GET" && !url.pathname.startsWith("/api/"))
+      return send(res, 404, renderNotFound((await app.portfolio.getOverview()).profile));
     return json(res, 404, { error: "Not found" });
   } catch (e) {
     const [status, body] = errorStatus(e);
