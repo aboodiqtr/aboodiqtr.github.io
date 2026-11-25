@@ -21,9 +21,20 @@ function projectCard(p: Project, i: number): string {
       <h3>${esc(p.title)}</h3>
       <p class="sub">${esc(p.summary)}</p>
       <div class="tags">${p.techStack.slice(0, 5).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+      ${(p.parts ?? []).map(partBlock).join("")}
       <div class="links">${links.join("")}</div>
     </div>
   </article>`;
+}
+
+function partBlock(part: NonNullable<Project["parts"]>[number]): string {
+  return `<div class="part">
+    <div class="part-head"><span class="part-label">Inside this project</span>${part.liveUrl ? `<a class="part-link" href="${esc(part.liveUrl)}" target="_blank" rel="noopener">Visit store ↗</a>` : ""}</div>
+    <strong>${esc(part.title)}</strong>
+    <p class="sub">${esc(part.summary)}</p>
+    <div class="part-points">${(part.highlights ?? []).map((h) => `<span><i></i>${esc(h)}</span>`).join("")}</div>
+    <div class="tags">${part.techStack.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+  </div>`;
 }
 
 function skillGroup(name: string, skills: Skill[]): string {
@@ -228,6 +239,13 @@ h3{font-size:24px;line-height:1.25;letter-spacing:-.01em;font-weight:600}
 .cover .idx{position:absolute;left:32px;top:28px;font:500 13px var(--mono);letter-spacing:.08em;color:var(--muted)}
 .cover .cover-title{position:absolute;left:32px;bottom:22px;font-size:40px;font-weight:600;letter-spacing:-.02em}
 .project .body{padding:28px 32px 32px;display:flex;flex-direction:column;gap:14px}.project .body .eyebrow{margin:0}
+.part{margin-top:4px;padding:18px 20px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.part-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.part-label{font:500 12px var(--mono);color:var(--muted)}
+.part-link{white-space:nowrap;flex:none;font:500 14px var(--sans);background:var(--text);color:#fff;padding:6px 12px;border-radius:999px}.part-link:hover{text-decoration:none;opacity:.85}
+.part strong{font-size:17px;font-weight:600}.part .sub{font-size:15px}
+.part-points{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--text2)}
+.part-points i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--text);margin-right:7px;vertical-align:middle}
 .links{display:flex;gap:20px;padding-top:6px;font-weight:500;font-size:15px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
 .skill-group{padding:24px;display:flex;flex-direction:column;gap:16px}.sg-head{display:flex;align-items:center;gap:10px;font-size:15px}

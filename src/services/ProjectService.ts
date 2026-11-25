@@ -33,7 +33,12 @@ export class ProjectService {
       .filter((p) => !query.tag || p.tags.some((t) => eq(t, query.tag!)))
       .filter((p) => !query.tech || p.techStack.some((t) => eq(t, query.tech!)))
       .filter((p) => !q || [p.title, p.summary, p.description].some((f) => f.toLowerCase().includes(q)))
-      .sort((a, b) => Number(b.featured) - Number(a.featured) || dateOf(b) - dateOf(a));
+      .sort(
+        (a, b) =>
+          Number(b.featured) - Number(a.featured) ||
+          (a.priority ?? 99) - (b.priority ?? 99) ||
+          dateOf(b) - dateOf(a),
+      );
   }
 
   async listFeatured(limit = 3): Promise<Project[]> {
@@ -119,6 +124,10 @@ export class ProjectService {
     for (const field of ["repoUrl", "liveUrl", "imageUrl"] as const) {
       if (p[field]) v.check(isUrl(p[field]!), `${field} is not a valid URL`);
     }
+    (p.parts ?? []).forEach((part, i) => {
+      v.require(part.title, `parts[${i}].title`).require(part.summary, `parts[${i}].summary`).maxLength(part.summary, 240, `parts[${i}].summary`);
+      if (part.liveUrl) v.check(isUrl(part.liveUrl), `parts[${i}].liveUrl is not a valid URL`);
+    });
     if (p.startedAt && p.completedAt) v.check(p.completedAt >= p.startedAt, "completedAt must be after startedAt");
     if (p.status === "published") v.check(!!p.description?.trim(), "description is required before publishing");
     if (v.issues.length) throw new ValidationError(v.issues);

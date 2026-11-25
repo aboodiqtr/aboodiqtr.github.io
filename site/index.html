@@ -53,6 +53,13 @@ h3{font-size:24px;line-height:1.25;letter-spacing:-.01em;font-weight:600}
 .cover .idx{position:absolute;left:32px;top:28px;font:500 13px var(--mono);letter-spacing:.08em;color:var(--muted)}
 .cover .cover-title{position:absolute;left:32px;bottom:22px;font-size:40px;font-weight:600;letter-spacing:-.02em}
 .project .body{padding:28px 32px 32px;display:flex;flex-direction:column;gap:14px}.project .body .eyebrow{margin:0}
+.part{margin-top:4px;padding:18px 20px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.part-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.part-label{font:500 12px var(--mono);color:var(--muted)}
+.part-link{white-space:nowrap;flex:none;font:500 14px var(--sans);background:var(--text);color:#fff;padding:6px 12px;border-radius:999px}.part-link:hover{text-decoration:none;opacity:.85}
+.part strong{font-size:17px;font-weight:600}.part .sub{font-size:15px}
+.part-points{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--text2)}
+.part-points i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--text);margin-right:7px;vertical-align:middle}
 .links{display:flex;gap:20px;padding-top:6px;font-weight:500;font-size:15px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
 .skill-group{padding:24px;display:flex;flex-direction:column;gap:16px}.sg-head{display:flex;align-items:center;gap:10px;font-size:15px}
@@ -132,8 +139,15 @@ dl{display:grid;grid-template-columns:80px 1fr;gap:12px 16px;padding-top:8px}dt{
     <div class="body">
       <p class="eyebrow">WEB · BUSINESS · FINTECH</p>
       <h3>COSMALINE — Accounting, Inventory &amp; POS</h3>
-      <p class="sub">Full-stack POS and accounting system for a cosmetics business. A double-entry engine auto-posts every sale and expense into the ledger, trial balance, income statement and balance sheet. Barcode scanning, stock alerts, payment gateways, roles, Arabic/English.</p>
+      <p class="sub">Full-stack POS, inventory and accounting system for a cosmetics business, plus its own online store. A double-entry engine auto-posts every sale and expense into the ledger and financial statements. Barcode POS, stock alerts, payment gateways, roles, Arabic/English.</p>
       <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span><span class="tag">Docker</span></div>
+      <div class="part">
+    <div class="part-head"><span class="part-label">Inside this project</span><a class="part-link" href="https://cosmaline-qa.pages.dev" target="_blank" rel="noopener">Visit store ↗</a></div>
+    <strong>COSMALINE Online Store</strong>
+    <p class="sub">Bilingual storefront connected to the system: live stock, card and Apple Pay checkout, automatic invoices, order tracking and order stages managed from the dashboard.</p>
+    <div class="part-points"><span><i></i>Live stock</span><span><i></i>Card &amp; Apple Pay</span><span><i></i>Order tracking</span><span><i></i>Arabic / English</span></div>
+    <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Cloudflare Pages</span><span class="tag">PayTabs</span><span class="tag">Apple Pay</span></div>
+  </div>
       <div class="links"><a href="#contact">Ask me about it →</a><span class="muted">Private repo</span></div>
     </div>
   </article><article class="card project">
@@ -143,6 +157,7 @@ dl{display:grid;grid-template-columns:80px 1fr;gap:12px 16px;padding-top:8px}dt{
       <h3>Mizaniyati — Budget &amp; Expense Tracker</h3>
       <p class="sub">Cross-platform budget app (Android, iOS, Web) for income, expenses, savings goals and subscriptions. Imports bank statements and bank SMS with automatic categorization. Real-time Firebase sync, multi-currency, bilingual, designed in Figma.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firestore</span><span class="tag">Figma</span></div>
+      
       <div class="links"><a href="#contact">Ask me about it →</a><span class="muted">Private repo</span></div>
     </div>
   </article><article class="card project">
@@ -152,6 +167,7 @@ dl{display:grid;grid-template-columns:80px 1fr;gap:12px 16px;padding-top:8px}dt{
       <h3>Islamic AI Assistant</h3>
       <p class="sub">AI-powered platform that answers Islamic jurisprudence questions by retrieving from trusted fatwa sources (IslamWeb, Sheikh Ibn Baz). Avatar-based chat UI, Google / Apple / email sign-in, and a clear disclaimer to verify the source.</p>
       <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">HTML/CSS</span><span class="tag">Render</span></div>
+      
       <div class="links"><a href="https://islamic-ai-assistant-2.onrender.com/" target="_blank" rel="noopener">Live demo ↗</a><span class="muted">Private repo</span></div>
     </div>
   </article><article class="card project">
@@ -161,6 +177,7 @@ dl{display:grid;grid-template-columns:80px 1fr;gap:12px 16px;padding-top:8px}dt{
       <h3>iTrack — Habit &amp; Savings Tracker</h3>
       <p class="sub">Turns self-discipline into savings: every successful habit adds a monetary reward to a growing balance. Streaks, a financial feedback loop and community accountability with real-time chat.</p>
       <div class="tags"><span class="tag">React Native</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Socket.IO</span><span class="tag">MySQL</span></div>
+      
       <div class="links"><a href="#contact">Ask me about it →</a><a class="muted" href="https://github.com/aboodiqtr/Smart-Habit-Tracker-Discipline-System" target="_blank" rel="noopener">Source ↗</a></div>
     </div>
   </article></div>
@@ -240,12 +257,13 @@ form.addEventListener("submit", async (e) => {
   btn.disabled = true; status.className = "status"; status.textContent = "Sending…";
   try {
     const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
-    const body = await res.json().catch(() => ({}));
+    const body = await res.json().catch(() => null);
+    if (!body) throw new Error("no backend");
     if (res.ok) { form.reset(); status.className = "status ok"; status.textContent = "Thanks! Your message was sent. I'll get back to you soon."; }
     else { status.className = "status err"; status.textContent = (body.issues || [body.error || "Something went wrong"]).join(" · "); }
   } catch {
     status.className = "status err";
-    status.innerHTML = 'The server is not reachable. Email me directly at <a href="mailto:abdulrahman.sharafaddin1@gmail.com">__EMAIL__</a>.';
+    status.innerHTML = 'The contact form is offline right now. Please email me at <a href="mailto:abdulrahman.sharafaddin1@gmail.com">__EMAIL__</a>.';
   } finally { btn.disabled = false; }
 });</script>
 </body>

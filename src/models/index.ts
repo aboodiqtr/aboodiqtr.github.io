@@ -34,6 +34,14 @@ export interface Skill {
 
 export type ProjectStatus = "draft" | "published" | "archived";
 
+export interface ProjectPart {
+  title: string;
+  summary: string;
+  techStack: string[];
+  liveUrl?: string;
+  highlights?: string[];
+}
+
 export interface Project {
   id: string;
   slug: string; // url friendly, e.g. "my-cool-app"
@@ -45,7 +53,11 @@ export interface Project {
   repoUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
+  /** Products that live inside this project, e.g. an online store built on top of a system. */
+  parts?: ProjectPart[];
   featured: boolean;
+  /** Lower comes first on the site (after featured). */
+  priority?: number;
   status: ProjectStatus;
   startedAt?: Date;
   completedAt?: Date;

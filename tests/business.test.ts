@@ -160,3 +160,20 @@ describe("PortfolioService", () => {
     expect(o.stats.yearsOfExperience).toBe(0); // education only
   });
 });
+
+describe("Project parts", () => {
+  it("keeps a valid part and rejects a bad part URL", async () => {
+    const base = { title: "Sys", summary: "S", description: "D", techStack: [] };
+    const p = await app.projects.createProject({ ...base, parts: [{ title: "Store", summary: "Shop", techStack: ["JS"], liveUrl: "https://shop.example.com" }] });
+    expect(p.parts?.[0].title).toBe("Store");
+    await expect(
+      app.projects.createProject({ ...base, title: "Sys 2", parts: [{ title: "Store", summary: "Shop", techStack: [], liveUrl: "nope" }] }),
+    ).rejects.toBeInstanceOf(ValidationError);
+  });
+
+  it("seeds the COSMALINE store inside the COSMALINE project", async () => {
+    await seedExample(app);
+    const c = await app.projects.getPublishedBySlug("cosmaline");
+    expect(c.parts?.[0].liveUrl).toBe("https://cosmaline-qa.pages.dev");
+  });
+});

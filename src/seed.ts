@@ -66,7 +66,8 @@ export async function seedExample(app: BusinessLayer): Promise<void> {
     {
       title: "COSMALINE — Accounting, Inventory & POS",
       slug: "cosmaline",
-      summary: "Full-stack POS and accounting system for a cosmetics business. A double-entry engine auto-posts every sale and expense into the ledger, trial balance, income statement and balance sheet. Barcode scanning, stock alerts, payment gateways, roles, Arabic/English.",
+      priority: 1,
+      summary: "Full-stack POS, inventory and accounting system for a cosmetics business, plus its own online store. A double-entry engine auto-posts every sale and expense into the ledger and financial statements. Barcode POS, stock alerts, payment gateways, roles, Arabic/English.",
       description:
         "Every sale or expense posts an automatic journal entry. Includes chart of accounts, ledger, trial balance, " +
         "income statement and balance sheet, receivables, role-based access (admin, accountant, cashier, warehouse), " +
@@ -74,11 +75,22 @@ export async function seedExample(app: BusinessLayer): Promise<void> {
         "Payment gateways: Moyasar, PayTabs, MyFatoorah. Migrated SQLite → MySQL → PostgreSQL with full end-to-end testing at each step.",
       techStack: ["Node.js", "Express", "PostgreSQL", "JWT", "Docker", "Sentry"],
       tags: ["web", "business", "fintech"],
+      parts: [
+        {
+          title: "COSMALINE Online Store",
+          summary:
+            "Bilingual storefront connected to the system: live stock, card and Apple Pay checkout, automatic invoices, order tracking and order stages managed from the dashboard.",
+          techStack: ["HTML/CSS/JS", "Cloudflare Pages", "PayTabs", "Apple Pay"],
+          liveUrl: "https://cosmaline-qa.pages.dev",
+          highlights: ["Live stock", "Card & Apple Pay", "Order tracking", "Arabic / English"],
+        },
+      ],
       featured: true,
     },
     {
       title: "Mizaniyati — Budget & Expense Tracker",
       slug: "mizaniyati",
+      priority: 2,
       summary: "Cross-platform budget app (Android, iOS, Web) for income, expenses, savings goals and subscriptions. Imports bank statements and bank SMS with automatic categorization. Real-time Firebase sync, multi-currency, bilingual, designed in Figma.",
       description:
         "Flutter app with Google, phone (SMS code) and email sign-in, Firebase cloud sync, multi-country and multi-currency " +
@@ -90,6 +102,7 @@ export async function seedExample(app: BusinessLayer): Promise<void> {
     {
       title: "Islamic AI Assistant",
       slug: "islamic-ai-assistant",
+      priority: 3,
       summary: "AI-powered platform that answers Islamic jurisprudence questions by retrieving from trusted fatwa sources (IslamWeb, Sheikh Ibn Baz). Avatar-based chat UI, Google / Apple / email sign-in, and a clear disclaimer to verify the source.",
       description:
         "Retrieves answers from established sources such as IslamWeb and Ibn Baz instead of generating freely, " +
@@ -102,6 +115,7 @@ export async function seedExample(app: BusinessLayer): Promise<void> {
     {
       title: "iTrack — Habit & Savings Tracker",
       slug: "itrack",
+      priority: 4,
       summary: "Turns self-discipline into savings: every successful habit adds a monetary reward to a growing balance. Streaks, a financial feedback loop and community accountability with real-time chat.",
       description:
         "Client-server system: React Native (Expo) mobile app and React + Vite + Tailwind web app (packaged with " +
